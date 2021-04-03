@@ -1,8 +1,36 @@
+const express = require('express');
 const path = require('path');
 
-//create array variables that will hold data
+const app = express();
+const PORT = process.env.PORT  || 3000;
 
-//set routes for getting data
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+//create array variables that will hold data
+let tableList = [];
+let waitList = [];
+let customer = []; 
+
+//form submission code 
+$('.submit').on('click', function() {
+    let newReso = {
+        customerName: $('#reserve-name').val().trim(),
+        phoneNumber: $('#phone-number').val().trim(),
+        customerEmail: $('#customer-email').val().trim(),
+        customerID: $('#customerID').val().trim()
+    }
+    console.log(newReso);
+    const currentURL = window.location.origin;
+    $.post(`${currentURL}/api/tables`, newReso, (data)=> {
+        if (data) {
+            alert('Yay! You gots a table!')
+        } else {
+            alert('ooh, you are on the wait list')
+        }
+    })    
+})
+
 
 //set routes for posting data
 
