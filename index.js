@@ -35,10 +35,20 @@ $('.submit').on('click', function() {
         if (data) {
             alert('Yay! You gots a table!')
         } else {
-            alert('ooh, you are on the wait list')
+            alert('uhoh, you are on the wait list')
         }
-    })    
+    })
+    //reset form
+    $('#reserve-name').val('');
+    $('#phone-number').val('');
+    $('#customer-email').val('');
+    $('#customerID').val('');
+
+    return;
 })
+
+//get list of current tables
+function 
 
 //set routes for posting data
 app.post('/api/tables', (req, res) => {
