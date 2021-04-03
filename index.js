@@ -35,10 +35,20 @@ $('.submit').on('click', function() {
         if (data) {
             alert('Yay! You gots a table!')
         } else {
-            alert('ooh, you are on the wait list')
+            alert('uhoh, you are on the wait list')
         }
-    })    
+    })
+    //reset form
+    $('#reserve-name').val('');
+    $('#phone-number').val('');
+    $('#customer-email').val('');
+    $('#customerID').val('');
+
+    return;
 })
+
+//get list of current tables
+function 
 
 //set routes for posting data
 app.post('/api/tables', (req, res) => {
@@ -52,16 +62,17 @@ app.post('/api/tables', (req, res) => {
 
 //set routes for displaying html
 function displayHTML(app) {
+    
+    app.get('/', function(req, res) {
+        res.sendFile(path.join(__dirname + 'index.html'));
+    });
+
     app.get('/tables', function(req, res) {
         res.sendFile(path.join(__dirname + 'tables.html'));
     });
 
     app.get('/reserve', function(req, res) {
         res.sendFile(path.join(__dirname + 'reserve.html'));
-    });
-
-    app.use(function(req, res) {
-        res.sendFile(path.join(__dirname + 'tables.html'));
     });
 }
 //ust jQuery to run AJAZ calls to get & post data
