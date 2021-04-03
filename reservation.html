@@ -75,5 +75,32 @@
             </footer>
         </div>
 </body>
+<script>
 
+//form submission code 
+$('.submit').on('click', function () {
+    let newReso = {
+        customerName: $('#reserve-name').val().trim(),
+        phoneNumber: $('#phone-number').val().trim(),
+        customerEmail: $('#customer-email').val().trim(),
+        customerID: $('#customerID').val().trim()
+    }
+    console.log(newReso);
+    const currentURL = window.location.origin;
+    $.post(`${currentURL}/api/tables`, newReso, (data) => {
+        if (data) {
+            alert('Yay! You gots a table!')
+        } else {
+            alert('uhoh, you are on the wait list')
+        }
+    })
+    //reset form
+    $('#reserve-name').val('');
+    $('#phone-number').val('');
+    $('#customer-email').val('');
+    $('#customerID').val('');
+
+    return;
+})
+</script>
 </html>
