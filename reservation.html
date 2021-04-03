@@ -81,9 +81,9 @@
 $('.submit').on('click', function () {
     let newReso = {
         customerName: $('#reserve-name').val().trim(),
-        phoneNumber: $('#phone-number').val().trim(),
-        customerEmail: $('#customer-email').val().trim(),
-        customerID: $('#customerID').val().trim()
+        phoneNumber: $('#reserve-phone').val().trim(),
+        customerEmail: $('#reserve-email').val().trim(),
+        customerID: $('#reserve-uniqueid').val().trim()
     }
     console.log(newReso);
     const currentURL = window.location.origin;
@@ -96,9 +96,9 @@ $('.submit').on('click', function () {
     })
     //reset form
     $('#reserve-name').val('');
-    $('#phone-number').val('');
-    $('#customer-email').val('');
-    $('#customerID').val('');
+    $('#reserve-phone').val('');
+    $('#reserve-email').val('');
+    $('#reserve-uniqueid').val('');
 
     return;
 })
