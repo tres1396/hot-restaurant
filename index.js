@@ -31,20 +31,20 @@ app.post('/api/tables', (req, res) => {
 function displayHTML(app) {
     
     app.get('/', function(req, res) {
-        res.sendFile(path.join(__dirname + 'index.html'));
+        res.sendFile(path.join(__dirname, 'index.html'));
     });
 
     app.get('/tables', function(req, res) {
-        res.sendFile(path.join(__dirname + 'tables.html'));
+        res.sendFile(path.join(__dirname, 'tables.html'));
     });
 
     app.get('/reserve', function (req, res) {
-        res.sendFile(path.join(__dirname + 'reserve.html'));
+        res.sendFile(path.join(__dirname, 'reserve.html'));
     });
 };
 
 //module exports
-module.exports = displayHTML();
+module.exports = displayHTML(app);
 
 //starts the server
 
