@@ -5,7 +5,14 @@ const path = require('path');
 //set routes for getting data
 
 //set routes for posting data
+app.post('/api/tables', (req, res) => {
+    const newTable = req.body;
 
+    console.log(newTable);
+  
+    tables.push(newTable);
+    res.json(newTable);
+  });
 //set routes for displaying html
 function displayHTML(app) {
     app.get('/tables', function(req, res) {
