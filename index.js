@@ -38,7 +38,7 @@ function displayHTML(app) {
         res.sendFile(path.join(__dirname, 'tables.html'));
     });
 
-    app.get('/reserve', function (req, res) {
+    app.get('/reservation', function (req, res) {
         res.sendFile(path.join(__dirname, 'reservation.html'));
     });
 };
