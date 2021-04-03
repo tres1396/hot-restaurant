@@ -45,16 +45,17 @@ app.post('/api/tables', (req, res) => {
 
 //set routes for displaying html
 function displayHTML(app) {
-    app.get('/tables', function (req, res) {
+    
+    app.get('/', function(req, res) {
+        res.sendFile(path.join(__dirname + 'index.html'));
+    });
+
+    app.get('/tables', function(req, res) {
         res.sendFile(path.join(__dirname + 'tables.html'));
     });
 
     app.get('/reserve', function (req, res) {
         res.sendFile(path.join(__dirname + 'reserve.html'));
-    });
-
-    app.use(function (req, res) {
-        res.sendFile(path.join(__dirname + 'tables.html'));
     });
 }
 //ust jQuery to run AJAZ calls to get & post data
