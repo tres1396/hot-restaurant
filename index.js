@@ -18,7 +18,7 @@ let customer = [];
 
 
 //set routes for posting data
-app.post('/api/tables', (req, res) => {
+app.post('/tables', (req, res) => {
     const newTable = req.body;
 
     console.log(newTable);
