@@ -1,14 +1,6 @@
 const express = require('express');
 const path = require('path');
 
-// add jQuery
-var jsdom = require("jsdom");
-const { JSDOM } = jsdom;
-const { window } = new JSDOM();
-const { document } = (new JSDOM('')).window;
-global.document = document;
-
-var $ = jQuery = require('jquery')(window);
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -23,15 +15,7 @@ let customer = [];
 
 
 
-//get list of current tables
-function getTables() {
-    app.get('/api/tables', (reg, res) => {
-        const tableData = res;
-        for (table of tableData) {
 
-        }
-    })
-}
 
 //set routes for posting data
 app.post('/api/tables', (req, res) => {
@@ -58,7 +42,7 @@ function displayHTML(app) {
         res.sendFile(path.join(__dirname + 'reserve.html'));
     });
 }
-//ust jQuery to run AJAZ calls to get & post data
+//use jQuery to run AJAX calls to get & post data
 
 //module exports
 module.exports = displayHTML();
