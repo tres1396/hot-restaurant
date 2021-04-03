@@ -48,7 +48,14 @@ $('.submit').on('click', function() {
 })
 
 //get list of current tables
-function 
+function getTables() {
+    app.get('/api/tables', (reg, res) => {
+        const tableData = res;
+        for (table of tableData) {
+            
+        }
+    })
+}
 
 //set routes for posting data
 app.post('/api/tables', (req, res) => {
