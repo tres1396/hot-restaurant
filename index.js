@@ -41,8 +41,11 @@ function displayHTML(app) {
     app.get('/reserve', function (req, res) {
         res.sendFile(path.join(__dirname + 'reserve.html'));
     });
-}
-//use jQuery to run AJAX calls to get & post data
+};
 
 //module exports
 module.exports = displayHTML();
+
+//starts the server
+
+app.listen(PORT, () => console.log(`app now listenting on PORT: ${PORT}`));
